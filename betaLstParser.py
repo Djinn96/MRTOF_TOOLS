@@ -20,7 +20,7 @@ def parseBetaBinary(filePath):
     
     parseIter = ((((x&bMasks[2]) >> bShifts[2]) * 40, # 40 ns per bit
                   ((x&bMasks[1]) >> bShifts[1]) + 1,  # ch number starts from 1
-                   (x&bMasks[0]) >> bShifts[0]) for x in data[:10])
+                   (x&bMasks[0]) >> bShifts[0]) for x in data)
     parsed = np.fromiter(parseIter,dtype=lstType)                              # parse data into parameters
     return parsed
 
